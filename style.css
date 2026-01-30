@@ -1,0 +1,515 @@
+/* ========== General RESET to normalize all elements ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ========== Global style for the body ========== */
+body {
+  color: #adeded;
+  background: #081b29; /* Dark background */
+}
+/*  */
+/* ========== Website header (Navbar + Logo) ========== */
+.header {
+  position: fixed; /* Stays at the top while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: #051129;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100; /* Always on top of the content */
+}
+
+/* ===== Website Logo ===== */
+.logo {
+  position: relative;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+  opacity: 0;
+  animation: slideRight 1s ease forwards; /* Slide-in from the right */
+}
+
+/* ===== Navigation links ===== */
+.navbar a {
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: -3s;
+  opacity: 0;
+  animation: slideTop -5s ease forwards; /* Slide-in from the top */
+  animation-delay: calc(-2s * var(--i)); /* Delay depending on order */
+}
+
+.navbar a:hover {
+  color: #0ef; /* Hover color */
+}
+
+/* ========== Main Section (Home) ========== */
+.home {
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  height: 100vh;
+  border-radius: 90%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 70px 10% 0;
+}
+
+/* ===== Portrait Image ===== */
+.home-img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%; /* Makes the image circular */
+  overflow: hidden;
+  flex-shrink: 0;
+ box-shadow:
+    0 0 400px rgba(0, 255, 255, 0.7),  /* الأزرق */ 
+    0 0 90px rgba(31, 212, 244, 0.7);  /* الوردي */
+    
+animation: fadeInRight 1s forwards; /* Enters from the right */
+  animation-delay: 2s;
+}
+
+.home-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ========== Animations ========== */
+@keyframes fadeInUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInRight {
+  0% { transform: translateX(50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* ===== Text content inside Home section ===== */
+.home-content {
+  max-width: 600px;
+}
+
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: -7s;
+}
+
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 30px;
+  animation: slideTop 1s ease forwards;
+  animation-delay: -7s;
+}
+
+.home-content h3 span {
+  color: #0ef; /* Highlights dynamic text (typed.js) */
+}
+
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.home-content p {
+  font-size: 18px;
+  opacity: 0;
+  animation: slideLift 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/* ===== Social Media Icons ===== */
+.home-scl a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0ef;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  opacity: 0;
+  animation: slideLift 1s ease forwards;
+}
+
+.home-scl a:hover {
+  background: #0ef;
+  color: #081b29;
+  box-shadow: 0 0 20px #0ef;
+}
+
+/* ===== Main Button (More About Me / See My Work) ===== */
+.btn-box {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0ef;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #081b29;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+
+.btn-box:hover {
+  box-shadow: 0 0 5px cyan,
+  0 0 25px cyan, 0 0 50px cyan,
+  0 0 100px cyan, 0 0 200px cyan;
+}
+
+/* ========== About Section ========== */
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ===== Image inside About section ===== */
+.about-img img {
+  padding-bottom: 20%;
+  max-width: 630px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ===== Texts inside About section ===== */
+.about-text h2 {
+  font-size: 60px;
+}
+.about-text h2 span {
+  color: #0ef;
+}
+.about-text h4 {
+  font-size: 29px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.7;
+  margin: 15px 0 30px;
+}
+.about-text p {
+  color: aliceblue;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 4rem;
+}
+
+/* ===== Buttons inside About section ===== */
+.btn-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 18px;
+} 
+.btn {
+  background: #0ef;;
+  color: #081b29;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(14,239,255,0.09);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--muted);
+}
+
+/* ========== Skills Section ========== */
+#skills {
+  background: #07182e;
+  color: #fff;
+  padding: 60px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.section-title span {
+  color: #0ef;
+}
+
+/* ===== Skills Grid ===== */
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* ===== Individual Skill Card ===== */
+.skill-card {
+  background: #0c223a;
+  border-radius: 15px;
+  padding: 30px;
+  width: 420px;
+  box-shadow: 0 0 15px rgba(0, 238, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px); /* Slight lift on hover */
+}
+
+.skill-card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+/* ===== Technical Skills (HTML, CSS, etc.) ===== */
+.skill-row {
+  margin-bottom: 18px;
+}
+.skill-row label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+.progress {
+  width: 100%;
+  height: 10px;
+  background: #1b3a55;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.progress i {
+  display: block;
+  height: 100%;
+  background: #0ef;
+  border-radius: 10px;
+}
+
+/* ===== Professional Skills (animated circles) ===== */
+.pro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  justify-items: center;
+  align-items: center;
+}
+
+.pro-item {
+  text-align: center;
+  transition: all 0.8s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Progress Circles ===== */
+.pro-item svg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+.pro-item circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+.pro-item .bg {
+  stroke: #2c3e50;
+}
+.pro-item .bar {
+  stroke: #0ef;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  animation: fillCircle 2s ease forwards;
+}
+
+/* ===== Circle Fill Animation ===== */
+@keyframes fillCircle {
+  from {
+    stroke-dashoffset: 251;
+  }
+  to {
+    stroke-dashoffset: var(--offset);
+  }
+}
+
+/* ===== Text below circles ===== */
+.pro-item p {
+  font-size: 1rem;
+  color: #fff;
+  margin-top: 8px;
+}
+.pro-item strong {
+  color: #0ef;
+  font-weight: 600;
+}
+
+/* ========== Portfolio Section (Projects) ========== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns fixed */
+  gap: 18px;
+}
+
+
+.project {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.project .thumb {
+  height: 190px;
+  overflow: hidden;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform .45s ease;
+}
+
+.project:hover img {
+  transform: scale(1.08); /* Slight zoom on hover */
+}
+
+.project .meta {
+  padding: 14px;
+}
+
+.project a.view {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(14,239,255,0.08);
+}
+ footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #051129; /* Dark background to match the theme */
+  color: #ffffff; /* White text for contrast */
+  display: flex; /* Add this */
+  justify-content: center; /* Add this for horizontal centering */
+  align-items: center; /* Add this for vertical centering */
+  min-height: 100px; /* Set a minimum height to ensure there's space to center */
+}
+
+.footer-content {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center; /* Keep this for text alignment within the content div */
+}
+
+
+
+/*  */
+
+.about-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-card {
+  position: relative;
+  width: 280px;
+  height: 360px;
+}
+
+/* blob */
+.about-blob {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: #22d3ee;
+  border-radius: 55% 45% 60% 40% / 50% 60% 40% 50%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* image */
+.about-person {
+  position: absolute;
+  width: 190px;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* line */
+.about-line {
+  position: absolute;
+  width: 180px;
+  height: 6px;
+  background: #22d3ee;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+/* ========== General Animations Used ========== */
+@keyframes slideRight {
+  0% { transform: translateX(-100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideLift {
+  0% { transform: translateX(100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideTop {
+  0% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideBottom {
+  0% { transform: translateY(-100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
