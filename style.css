@@ -446,10 +446,12 @@ animation: fadeInRight 1s forwards; /* Enters from the right */
 
 /*  */
 
-.about-img {
+.about-image {
   display: flex;
   justify-content: center;
   align-items: center;
+    max-width: 630px;
+  width: 100%;
 }
 
 .about-card {
@@ -461,8 +463,8 @@ animation: fadeInRight 1s forwards; /* Enters from the right */
 /* blob */
 .about-blob {
   position: absolute;
-  width: 250px;
-  height: 250px;
+  width: 245px;
+  height: 245px;
   background: #22d3ee;
   border-radius: 55% 45% 60% 40% / 50% 60% 40% 50%;
   top: 20px;
@@ -474,8 +476,9 @@ animation: fadeInRight 1s forwards; /* Enters from the right */
 /* image */
 .about-person {
   position: absolute;
-  width: 190px;
-  bottom: 40px;
+  width: 220px;
+  height: auto;
+  bottom:16px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -484,7 +487,7 @@ animation: fadeInRight 1s forwards; /* Enters from the right */
 /* line */
 .about-line {
   position: absolute;
-  width: 180px;
+  width: 300px;
   height: 6px;
   background: #22d3ee;
   bottom: 10px;
